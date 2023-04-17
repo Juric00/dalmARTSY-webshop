@@ -1,4 +1,5 @@
 ﻿using dalmARTSY_Test.Areas.Identity.Data;
+using dalmARTSY_Test.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -7,6 +8,16 @@ namespace dalmARTSY_Test.Data;
 
 public class AppDbContext : IdentityDbContext<AppUser>
 {
+    public DbSet <Category> Categories { get; set; }
+    public DbSet<Product> Products { get; set; }
+    public DbSet<Style> Styles { get; set; }
+    public DbSet<ProductStyle> ProductStyles { get; set; }
+    public DbSet<Order> Orders { get; set; }
+    public DbSet<OrderItem> OrderItems { get; set; }
+
+
+
+
     public AppDbContext(DbContextOptions<AppDbContext> options)
         : base(options)
     {
