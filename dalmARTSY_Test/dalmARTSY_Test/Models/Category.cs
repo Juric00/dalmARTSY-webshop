@@ -15,7 +15,6 @@ namespace dalmARTSY_Test.Models
         [Required]
         public string Description { get; set; }
 
-        [Required]
         [Column(TypeName = "nvarchar(200)")]
         public string Image { get; set; }
     }
