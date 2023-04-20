@@ -1,0 +1,27 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using dalmARTSY_Test.Areas.Identity.Data
+
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+
+@if(SignInManager.IsSignedIn(User) && await UserManager.IsInRoleAsync(UserManager.GetUserAsync(User).Result, "dalmARTmin"))
+    {
+        <div class="dropdown">
+            <a class="btn nav-link dropdown-toggle" id="dropdownAdmin" data-bs-toggle="dropdown">
+                Admin
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a class="dropdown-item" type="button" asp-area="admin" asp-controller="categories" asp-action="index">
+                        Categories
+                    </a>
+                    <a class="dropdown-item" type="button" asp-area="admin" asp-controller="products" asp-action="index">
+                        Products
+                    </a>
+                    <a class="dropdown-item" type="button" asp-area="admin" asp-controller="products" asp-action="index">
+                        Styles
+                    </a>
+                </li>
+            </ul>
+        </div>
+    }

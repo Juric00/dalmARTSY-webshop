@@ -14,7 +14,7 @@ namespace dalmARTSY_Test
             builder.Services.AddDbContext<AppDbContext>(options =>
             options.UseSqlServer(connectionString));
 
-            builder.Services.AddDefaultIdentity<AppUser>(options => options.SignIn.RequireConfirmedAccount = false)
+            builder.Services.AddDefaultIdentity<AppUser>(options => options.SignIn.RequireConfirmedAccount = false).AddRoles<IdentityRole>()
             .AddEntityFrameworkStores<AppDbContext>();
 
             // Add services to the container.
@@ -40,6 +40,11 @@ namespace dalmARTSY_Test
             app.UseAuthentication();
 
             app.UseAuthorization();
+
+            app.MapAreaControllerRoute(
+                name: "Admin",
+                areaName: "Admin",
+                pattern: "admin/{controller}/{action}/{id?}");
 
             app.MapControllerRoute(
                 name: "default",
