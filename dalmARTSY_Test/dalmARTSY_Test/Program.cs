@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using dalmARTSY_Test.Data;
 using dalmARTSY_Test.Areas.Identity.Data;
+using System.Globalization;
+
 namespace dalmARTSY_Test
 {
     public class Program
@@ -35,6 +37,22 @@ namespace dalmARTSY_Test
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            // CultureInfo setup (decimal numbers)
+            #region CultureInfo
+            var ci = new CultureInfo("de-De");
+
+            ci.NumberFormat.NumberDecimalSeparator = ".";
+            ci.NumberFormat.CurrencyDecimalSeparator = ".";
+
+            app.UseRequestLocalization(new RequestLocalizationOptions
+            {
+                DefaultRequestCulture = new Microsoft.AspNetCore.Localization.RequestCulture(ci),
+                SupportedCultures = new List<CultureInfo> { ci },
+                SupportedUICultures = new List<CultureInfo> { ci }
+            }
+            );
+            #endregion
 
             app.UseRouting();
             app.UseAuthentication();

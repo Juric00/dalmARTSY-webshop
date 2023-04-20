@@ -1,0 +1,18 @@
+﻿@using dalmARTSY_Test.Data
+
+@inject AppDbContext _dbContext
+
+<div class="form-group">
+    
+    <label class="control-label"> Select product style </label>
+
+    <select class="form-control" name="styleIds[]" multiple>   
+
+        @foreach(var styleItem in _dbContext.Styles.ToList())
+        {
+            <option value="@styleItem.Id"> @styleItem.Title </option>
+        }
+
+    </select>
+
+</div> 

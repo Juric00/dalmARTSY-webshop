@@ -13,87 +13,87 @@ namespace dalmARTSY_Test.Areas.Admin.Controllers
 {
     [Area("Admin")]
     [Authorize]
-    public class CategoriesController : Controller
+    public class StylesController : Controller
     {
         private readonly AppDbContext _context;
 
-        public CategoriesController(AppDbContext context)
+        public StylesController(AppDbContext context)
         {
             _context = context;
         }
 
-        // GET: Admin/Categories
+        // GET: Admin/Styles
         public async Task<IActionResult> Index()
         {
-              return _context.Categories != null ? 
-                          View(await _context.Categories.ToListAsync()) :
-                          Problem("Entity set 'AppDbContext.Categories'  is null.");
+              return _context.Styles != null ? 
+                          View(await _context.Styles.ToListAsync()) :
+                          Problem("Entity set 'AppDbContext.Styles'  is null.");
         }
 
-        // GET: Admin/Categories/Details/5
+        // GET: Admin/Styles/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Categories == null)
+            if (id == null || _context.Styles == null)
             {
                 return NotFound();
             }
 
-            var category = await _context.Categories
+            var style = await _context.Styles
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (category == null)
+            if (style == null)
             {
                 return NotFound();
             }
 
-            return View(category);
+            return View(style);
         }
 
-        // GET: Admin/Categories/Create
+        // GET: Admin/Styles/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Admin/Categories/Create
+        // POST: Admin/Styles/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Description,Image")] Category category)
+        public async Task<IActionResult> Create([Bind("Id,Title,About")] Style style)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(category);
+                _context.Add(style);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(category);
+            return View(style);
         }
 
-        // GET: Admin/Categories/Edit/5
+        // GET: Admin/Styles/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Categories == null)
+            if (id == null || _context.Styles == null)
             {
                 return NotFound();
             }
 
-            var category = await _context.Categories.FindAsync(id);
-            if (category == null)
+            var style = await _context.Styles.FindAsync(id);
+            if (style == null)
             {
                 return NotFound();
             }
-            return View(category);
+            return View(style);
         }
 
-        // POST: Admin/Categories/Edit/5
+        // POST: Admin/Styles/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,Image")] Category category)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,About")] Style style)
         {
-            if (id != category.Id)
+            if (id != style.Id)
             {
                 return NotFound();
             }
@@ -102,12 +102,12 @@ namespace dalmARTSY_Test.Areas.Admin.Controllers
             {
                 try
                 {
-                    _context.Update(category);
+                    _context.Update(style);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!CategoryExists(category.Id))
+                    if (!StyleExists(style.Id))
                     {
                         return NotFound();
                     }
@@ -118,49 +118,49 @@ namespace dalmARTSY_Test.Areas.Admin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(category);
+            return View(style);
         }
 
-        // GET: Admin/Categories/Delete/5
+        // GET: Admin/Styles/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Categories == null)
+            if (id == null || _context.Styles == null)
             {
                 return NotFound();
             }
 
-            var category = await _context.Categories
+            var style = await _context.Styles
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (category == null)
+            if (style == null)
             {
                 return NotFound();
             }
 
-            return View(category);
+            return View(style);
         }
 
-        // POST: Admin/Categories/Delete/5
+        // POST: Admin/Styles/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Categories == null)
+            if (_context.Styles == null)
             {
-                return Problem("Entity set 'AppDbContext.Categories'  is null.");
+                return Problem("Entity set 'AppDbContext.Styles'  is null.");
             }
-            var category = await _context.Categories.FindAsync(id);
-            if (category != null)
+            var style = await _context.Styles.FindAsync(id);
+            if (style != null)
             {
-                _context.Categories.Remove(category);
+                _context.Styles.Remove(style);
             }
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool CategoryExists(int id)
+        private bool StyleExists(int id)
         {
-          return (_context.Categories?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_context.Styles?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }
