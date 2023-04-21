@@ -51,7 +51,11 @@ namespace dalmARTSY_Test.Areas.Admin.Controllers
         // GET: Admin/Products/Create
         public IActionResult Create()
         {
+
             ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Title");
+
+            ViewBag.ErrorMessage = TempData["ErrorMessage"] as string ?? ""; // Fail safe - ako ne postoji TempData, neka bude prazno "" ( ?? - nullable)
+
             return View();
         }
 
@@ -62,14 +66,32 @@ namespace dalmARTSY_Test.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,CategoryId,Author,Title,Height,Width,Description,Frame,InStock,Price,ArtCode,Image")] Product product, int[] styleIds)
         {
+            if(styleIds.Length==0 || styleIds==null)
+            {
+                TempData["ErrorMessage"] = "Choose one or more styles for your dalmARTSY art";
+                return RedirectToAction(nameof(Create));
+            }
+
             if (ModelState.IsValid)     //ModelState - svojstvo koje (Binda) mapira svojstva klase sa objektom/PARAMETROM iz Create akcije
             {
                 _context.Add(product);
                 await _context.SaveChangesAsync();
+
+                foreach (var styleId in styleIds)
+                {
+                    ProductStyle productStyle = new ProductStyle();
+                    productStyle.StyleId = styleId;
+                    productStyle.ProductId = product.Id;
+
+                    _context.ProductStyles.Add(productStyle);
+                }
+                await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
+
             }
             ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Title", product.CategoryId);
             return View(product);
+
         }
 
         // GET: Admin/Products/Edit/5
