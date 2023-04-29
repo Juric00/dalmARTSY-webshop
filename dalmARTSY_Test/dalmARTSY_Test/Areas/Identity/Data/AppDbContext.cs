@@ -80,8 +80,7 @@ public class AppDbContext : IdentityDbContext<AppUser>
         #region Seeding Roles
         List<IdentityRole> identityRoles = new List<IdentityRole>()
         {
-            new IdentityRole() { Id = "Administrator-000" , Name = "dalmARTmin", NormalizedName = "dalmARTmin".ToUpper() },
-            new IdentityRole() { Id = "User-000" , Name = "dalmARTuser", NormalizedName = "dalmARTuser".ToUpper() }
+            new IdentityRole() { Id = "9ce0f798-67a5-4957-adae-c1e2bb402f74" , Name = "dalmARTmin", NormalizedName = "dalmARTmin".ToUpper() },
         };
 
         builder.Entity<IdentityRole>().HasData(identityRoles);
@@ -91,7 +90,7 @@ public class AppDbContext : IdentityDbContext<AppUser>
         #region Seeding AspNetUsers
         List<AppUser> appUsers = new List<AppUser>()
         {
-            new AppUser(){ Id = "A100", UserName = "dalmART_IT", NormalizedUserName ="dalmART_IT".ToUpper(), Email = "artsupport@mail.com", NormalizedEmail = "artsupport@mail.com".ToUpper(), FirstName = "John", LastName ="Doe", PasswordHash = new PasswordHasher<AppUser>().HashPassword(null, "Pa$$w0rd") }
+            new AppUser(){ Id = "edb27c1d-d9de-4ae7-8206-fec010a5004b", UserName = "dalmART_IT", NormalizedUserName ="dalmART_IT".ToUpper(), Email = "artsupport@mail.com", NormalizedEmail = "artsupport@mail.com".ToUpper(), FirstName = "John", LastName ="Doe", PasswordHash = new PasswordHasher<AppUser>().HashPassword(null, "Pa$$w0rd") }
         };
 
 
@@ -102,7 +101,7 @@ public class AppDbContext : IdentityDbContext<AppUser>
         #region Seeding AspNetUserRoles
         List<IdentityUserRole<string>> identityUserRole = new List<IdentityUserRole<string>>()
         {
-            new IdentityUserRole<string>() { RoleId = "Administrator-000", UserId= "A100"}
+            new IdentityUserRole<string>() { RoleId = "9ce0f798-67a5-4957-adae-c1e2bb402f74", UserId= "edb27c1d-d9de-4ae7-8206-fec010a5004b"}
         };
 
         builder.Entity<IdentityUserRole<string>>().HasData(identityUserRole);

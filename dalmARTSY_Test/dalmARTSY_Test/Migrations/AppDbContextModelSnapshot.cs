@@ -99,9 +99,9 @@ namespace dalmARTSY_Test.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "A100",
+                            Id = "edb27c1d-d9de-4ae7-8206-fec010a5004b",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "331b6ece-9b5c-480e-a456-245aba68784e",
+                            ConcurrencyStamp = "a1d71766-e8a0-4b03-a409-e12914db3597",
                             Email = "artsupport@mail.com",
                             EmailConfirmed = false,
                             FirstName = "John",
@@ -109,9 +109,9 @@ namespace dalmARTSY_Test.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ARTSUPPORT@MAIL.COM",
                             NormalizedUserName = "DALMART_IT",
-                            PasswordHash = "AQAAAAEAACcQAAAAEDq7pGH7eom5/iqCygd+0TCtelpFPRZPppZengTNDPHiIovaEFLhXZcXZL0KbkL+gA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEEG2njC2mm+aXQstYT42c4/d41kC1IwGP32deW9IqhTOiGSgadkZXj/v5YNeHeTFmQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "74a700a1-47c9-4883-9289-bbce119bc438",
+                            SecurityStamp = "d1574435-1461-484e-9a34-769b849ae46c",
                             TwoFactorEnabled = false,
                             UserName = "dalmART_IT"
                         });
@@ -501,17 +501,10 @@ namespace dalmARTSY_Test.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "Administrator-000",
-                            ConcurrencyStamp = "1e6c98f4-feca-4f38-9977-12a4b946e143",
+                            Id = "9ce0f798-67a5-4957-adae-c1e2bb402f74",
+                            ConcurrencyStamp = "01ac5296-fb64-4ecd-8786-c7326cd5fa56",
                             Name = "dalmARTmin",
                             NormalizedName = "DALMARTMIN"
-                        },
-                        new
-                        {
-                            Id = "User-000",
-                            ConcurrencyStamp = "7df66c85-2c03-4784-b470-7fb301d6477e",
-                            Name = "dalmARTuser",
-                            NormalizedName = "DALMARTUSER"
                         });
                 });
 
@@ -606,8 +599,8 @@ namespace dalmARTSY_Test.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "A100",
-                            RoleId = "Administrator-000"
+                            UserId = "edb27c1d-d9de-4ae7-8206-fec010a5004b",
+                            RoleId = "9ce0f798-67a5-4957-adae-c1e2bb402f74"
                         });
                 });
 

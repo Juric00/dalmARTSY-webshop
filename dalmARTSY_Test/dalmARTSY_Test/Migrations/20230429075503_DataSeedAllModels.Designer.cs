@@ -12,8 +12,8 @@ using dalmARTSY_Test.Data;
 namespace dalmARTSY_Test.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230418141036_SeedAspNetRolesAdminUser")]
-    partial class SeedAspNetRolesAdminUser
+    [Migration("20230429075503_DataSeedAllModels")]
+    partial class DataSeedAllModels
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -97,6 +97,26 @@ namespace dalmARTSY_Test.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "edb27c1d-d9de-4ae7-8206-fec010a5004b",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "a1d71766-e8a0-4b03-a409-e12914db3597",
+                            Email = "artsupport@mail.com",
+                            EmailConfirmed = false,
+                            FirstName = "John",
+                            LastName = "Doe",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "ARTSUPPORT@MAIL.COM",
+                            NormalizedUserName = "DALMART_IT",
+                            PasswordHash = "AQAAAAEAACcQAAAAEEG2njC2mm+aXQstYT42c4/d41kC1IwGP32deW9IqhTOiGSgadkZXj/v5YNeHeTFmQ==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "d1574435-1461-484e-9a34-769b849ae46c",
+                            TwoFactorEnabled = false,
+                            UserName = "dalmART_IT"
+                        });
                 });
 
             modelBuilder.Entity("dalmARTSY_Test.Models.Category", b =>
@@ -483,17 +503,10 @@ namespace dalmARTSY_Test.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "Administrator-000",
-                            ConcurrencyStamp = "48b96d8e-0d6c-47fb-80c2-dcef099941d7",
-                            Name = "Admin",
-                            NormalizedName = "ADMIN"
-                        },
-                        new
-                        {
-                            Id = "User-000",
-                            ConcurrencyStamp = "dbcafe9e-4a70-4a4d-b8db-cee36cd1f19f",
-                            Name = "User",
-                            NormalizedName = "USER"
+                            Id = "9ce0f798-67a5-4957-adae-c1e2bb402f74",
+                            ConcurrencyStamp = "01ac5296-fb64-4ecd-8786-c7326cd5fa56",
+                            Name = "dalmARTmin",
+                            NormalizedName = "DALMARTMIN"
                         });
                 });
 
@@ -584,6 +597,13 @@ namespace dalmARTSY_Test.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "edb27c1d-d9de-4ae7-8206-fec010a5004b",
+                            RoleId = "9ce0f798-67a5-4957-adae-c1e2bb402f74"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
