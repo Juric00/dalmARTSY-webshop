@@ -17,7 +17,6 @@ public class AppDbContext : IdentityDbContext<AppUser>
 
 
 
-
     public AppDbContext(DbContextOptions<AppDbContext> options)
         : base(options)
     {
@@ -89,6 +88,7 @@ public class AppDbContext : IdentityDbContext<AppUser>
         // Seeding AspNetUsers
         #region Seeding AspNetUsers
         List<AppUser> appUsers = new List<AppUser>()
+
         {
             new AppUser(){ Id = "edb27c1d-d9de-4ae7-8206-fec010a5004b", UserName = "dalmART_IT", NormalizedUserName ="dalmART_IT".ToUpper(), Email = "artsupport@mail.com", NormalizedEmail = "artsupport@mail.com".ToUpper(), FirstName = "John", LastName ="Doe", PasswordHash = new PasswordHasher<AppUser>().HashPassword(null, "Pa$$w0rd") }
         };

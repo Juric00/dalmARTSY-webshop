@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using dalmARTSY_Test.Data;
 using dalmARTSY_Test.Models;
 using Microsoft.AspNetCore.Authorization;
+using System.Drawing;
 
 namespace dalmARTSY_Test.Areas.Admin.Controllers
 {
@@ -64,7 +65,7 @@ namespace dalmARTSY_Test.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,CategoryId,Author,Title,Height,Width,Description,Frame,InStock,Price,ArtCode,Image")] Product product, int[] styleIds)
+        public async Task<IActionResult> Create([Bind("Id,CategoryId,Author,Title,Height,Width,Description,Frame,InStock,Price,ArtCode,Image")] Product product, int[] styleIds, IFormFile Image)
         {
             if(styleIds.Length==0 || styleIds==null)
             {
@@ -74,6 +75,30 @@ namespace dalmARTSY_Test.Areas.Admin.Controllers
 
             if (ModelState.IsValid)     //ModelState - svojstvo koje (Binda) mapira svojstva klase sa objektom/PARAMETROM iz Create akcije
             {
+                try
+                {
+                    var getFimeExtension = Path.GetExtension(Image.FileName);
+                    var imageName = DateTime.Now.ToString("yyyy-MM-dd-hh-mm-ss") + getFimeExtension;
+
+                    var saveImagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/products", imageName);
+
+                    Directory.CreateDirectory(Path.GetDirectoryName(saveImagePath));
+
+                    using (var stream = new FileStream(saveImagePath, FileMode.Create))
+                    {
+                        Image.CopyTo(stream);
+                    }
+
+                    product.Image = imageName;
+
+                }
+
+                catch(Exception ex)
+                {
+                    TempData["Error Message"] = ex.Message;
+                    return RedirectToAction(nameof(Create));
+                }
+
                 _context.Add(product);
                 await _context.SaveChangesAsync();
 
