@@ -17,11 +17,11 @@ namespace dalmARTSY_Test.Models
         [Required]
         [StringLength(250)]
 
-        public string Author { get; set; }
+        public string? Author { get; set; }
 
         [Required]
         [StringLength(250)]
-        public string Title { get; set; }
+        public string? Title { get; set; }
 
         [Required]
         public decimal Height { get; set; }
@@ -42,11 +42,10 @@ namespace dalmARTSY_Test.Models
 
         [Required]
         [Column(TypeName = "nvarchar(15)")]
-        public string ArtCode { get; set; }
+        public string? ArtCode { get; set; }
 
-        [Required]
         [Column(TypeName = "nvarchar(200)")]
-        public string Image { get; set; }
+        public string? Image { get; set; }
 
 
 

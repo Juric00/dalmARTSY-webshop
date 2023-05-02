@@ -82,7 +82,7 @@ namespace dalmARTSY_Test.Areas.Admin.Controllers
 
                     var saveImagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/products", imageName);
 
-                    Directory.CreateDirectory(Path.GetDirectoryName(saveImagePath));
+                    Directory.CreateDirectory(Path.GetDirectoryName(saveImagePath) ?? throw new ArgumentNullException(nameof(saveImagePath)));
 
                     using (var stream = new FileStream(saveImagePath, FileMode.Create))
                     {
