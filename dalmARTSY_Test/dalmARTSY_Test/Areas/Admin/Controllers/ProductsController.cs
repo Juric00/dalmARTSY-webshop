@@ -77,8 +77,8 @@ namespace dalmARTSY_Test.Areas.Admin.Controllers
             {
                 try
                 {
-                    var getFimeExtension = Path.GetExtension(Image.FileName);
-                    var imageName = DateTime.Now.ToString("yyyy-MM-dd-hh-mm-ss") + getFimeExtension;
+                    var getFileExtension = Path.GetExtension(Image.FileName);
+                    var imageName = DateTime.Now.ToString("yyyy-MM-dd-hh-mm-ss") + getFileExtension;
 
                     var saveImagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/products", imageName);
 
