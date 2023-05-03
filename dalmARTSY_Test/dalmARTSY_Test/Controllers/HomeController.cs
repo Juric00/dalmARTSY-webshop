@@ -1,6 +1,7 @@
 ﻿using dalmARTSY_Test.Data;
 using dalmARTSY_Test.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace dalmARTSY_Test.Controllers

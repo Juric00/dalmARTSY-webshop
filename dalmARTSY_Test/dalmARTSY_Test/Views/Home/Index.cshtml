@@ -12,20 +12,35 @@
 </div>
 
 <div class="row">
+    <form method="get" asp-area="" asp-controller="Home" asp-action="Index">
+
+        <input type="text" class="form-control" name="searchQuery" />
+        <input type="submit" class="btn btn-success" value="Search..."/>
+
+    </form>
+</div>
+
+<div class="row">
+
     @foreach(var item in Model)
     {
-        <div class="card" style="width: 18rem;">
+        <div class="card col-3 mb-4">
+            @{
+                string setImage = !String.IsNullOrEmpty(item.Image) ? "~/images/products/" + item.Image : "~/images/a.png";
+            }
 
-            <img src="~/images/products/@item.Image" class="card-img-top" alt="...">
+            <img src="@Url.Content(setImage)" class="card-img-top" alt="...">
 
             <div class="card-body">
+
                 <h5 class="card-title">@item.Title</h5>
                 <p class="card-text">@item.Description</p>
 
                 <p class="card-text">@item.Price.ToString("C2")</p>
 
-                <a href="#" class="btn btn-primary">Check dalmART</a>
+                <a class="btn btn-primary">Check dalmART</a>
             </div>
+            
         </div>
     }
 </div>

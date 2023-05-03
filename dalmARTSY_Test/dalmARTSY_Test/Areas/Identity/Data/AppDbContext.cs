@@ -53,7 +53,13 @@ public class AppDbContext : IdentityDbContext<AppUser>
             new Product() { Id = 3, CategoryId = 4, Author = "Irena Martinic", Title = "Sunset in Vala", Height = 100, Width = 120, Description = "Description ...update needed", Frame = false, InStock = 1, Price = 50.99M, ArtCode = "D100", Image = "sunset_in_vala.jpg"},
             new Product() { Id = 4, CategoryId = 5, Author = "Keti Zuvic", Title = "Portrait of a woman", Height = 40, Width = 40, Description = "Description ...update needed", Frame = true, InStock = 5, Price = 160.00M, ArtCode = "MM100", Image = "portrait_of_a_woman.jpg"},
             new Product() { Id = 5, CategoryId = 2, Author = "Pero Dragicevic", Title = "Our People", Height = 30, Width = 20, Description = "Description ...", Frame = false, InStock = 7, Price = 24.99M, ArtCode = "PH100", Image = "our_people.jpg"},
-            new Product() { Id = 6, CategoryId = 1, Author = "Branka Kusanovic", Title = "Just an Object", Height = 100, Width = 140, Description = "Description ...update needed", Frame = true, InStock = 3, Price = 70.00M, ArtCode = "PA102", Image = "just_an_object.jpg"}
+            new Product() { Id = 6, CategoryId = 1, Author = "Branka Kusanovic", Title = "Just an Object", Height = 100, Width = 140, Description = "Description ...update needed", Frame = true, InStock = 3, Price = 70.00M, ArtCode = "PA102", Image = "just_an_object.jpg"},
+            new Product() { Id = 7, CategoryId = 1, Author = "Lukrecija Juric", Title = "She with hers", Height = 100, Width = 40, Description = "Description ...update needed", Frame = true, InStock = 2, Price = 50.9M, ArtCode = "PA103"},
+            new Product() { Id = 8, CategoryId = 1, Author = "Lukrecija Juric", Title = "Nature as it is", Height = 50, Width = 100, Description = "Description ...update needed", Frame = true, InStock = 2, Price = 89.00M, ArtCode = "PA104"},
+            new Product() { Id = 9, CategoryId = 1, Author = "Lukrecija Juric", Title = "Somehow", Height = 40, Width = 60, Description = "Description ...update needed", Frame = true, InStock = 1, Price = 75.00M, ArtCode = "PA105"},
+            new Product() { Id = 10, CategoryId = 4, Author = "Lukrecija Juric", Title = "Artsy", Height = 60, Width = 80, Description = "Description ...update needed", Frame = true, InStock = 5, Price = 79.00M, ArtCode = "D101"},
+            new Product() { Id = 11, CategoryId = 1, Author = "Lukrecija Juric", Title = "Antidote", Height = 100, Width = 140, Description = "Description ...update needed", Frame = true, InStock = 1, Price = 90.99M, ArtCode = "PA106"},
+            new Product() { Id = 12, CategoryId = 4, Author = "Lukrecija Juric", Title = "Objects", Height = 20, Width = 40, Description = "Description ...update needed", Frame = false, InStock = 3, Price = 70.00M, ArtCode = "D102"}
         };
 
         builder.Entity<Product>().HasData(artProducts);
