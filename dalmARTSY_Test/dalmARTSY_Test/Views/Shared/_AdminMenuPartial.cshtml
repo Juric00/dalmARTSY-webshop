@@ -6,8 +6,8 @@
 
 @if(SignInManager.IsSignedIn(User) && await UserManager.IsInRoleAsync(UserManager.GetUserAsync(User).Result, "dalmARTmin"))
     {
-        <div class="dropdown">
-            <a class="btn nav-link dropdown-toggle" id="dropdownAdmin" data-bs-toggle="dropdown">
+    <div class="dropdown">
+        <a class="btn nav-link dropdown-toggle" id="dropdownAdmin" data-bs-toggle="dropdown">
                 Admin
             </a>
             <ul class="dropdown-menu">
@@ -21,7 +21,10 @@
                 <a class="dropdown-item" type="button" asp-area="admin" asp-controller="styles" asp-action="index">
                         Styles
                     </a>
-                </li>
-            </ul>
-        </div>
+                <a class="dropdown-item" type="button" asp-area="admin" asp-controller="appuser" asp-action="index">
+                    Users
+                </a>
+            </li>
+        </ul>
+    </div>
     }

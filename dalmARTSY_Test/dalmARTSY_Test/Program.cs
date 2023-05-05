@@ -16,8 +16,9 @@ namespace dalmARTSY_Test
             builder.Services.AddDbContext<AppDbContext>(options =>
             options.UseSqlServer(connectionString));
 
-            builder.Services.AddDefaultIdentity<AppUser>(options => options.SignIn.RequireConfirmedAccount = false).AddRoles<IdentityRole>()
-            .AddEntityFrameworkStores<AppDbContext>();
+            builder.Services.AddDefaultIdentity<AppUser>(options => options.SignIn.RequireConfirmedAccount = false).AddRoles<IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
+
+            builder.Services.AddScoped<IPasswordHasher<AppUser>, PasswordHasher<AppUser>>();
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();

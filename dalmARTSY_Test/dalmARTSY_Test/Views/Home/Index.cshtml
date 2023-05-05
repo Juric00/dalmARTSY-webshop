@@ -12,35 +12,63 @@
 </div>
 
 <div class="row">
-    <form method="get" asp-area="" asp-controller="Home" asp-action="Index">
+    <form method="get" asp-area="" asp-controller="Home" asp-action="Index" class="row mb-5">
+        <div class="col-4">
+            <input type="text" class="form-control" name="searchQuery" />
+        </div>
 
-        <input type="text" class="form-control" name="searchQuery" />
-        <input type="submit" class="btn btn-success" value="Search..."/>
+        <div class="col-3">
+            <input type="submit" class="btn btn-success" value="Search..." />
+        </div>
+
+        <div class="col-3">
+            <select class="form-select" name="orderBy">
+                <option value="">Order by..</option>
+                <option value="1">Title (A-Z)</option>
+                <option value="2">Title (Z-A)</option>
+                <option value="3">Price (Lower to Higher)</option>
+                <option value="4">Price (Higher to Lower)</option>
+            </select>
+        </div>
+
+        <div class="col-3">
+            <select class="form-select" name="orderBy">
+                <option value="">Choose from dalmArtsy..</option>
+                <option value="5">Products</option>
+                <option value="6">Categories</option>
+                <option value="7">Styles</option>
+            </select>
+        </div>
 
     </form>
 </div>
 
 <div class="row">
 
-    @foreach(var item in Model)
+    @for (int i = 0; i < Model.Count; i++)
     {
-        <div class="card col-3 mb-4">
-            @{
-                string setImage = !String.IsNullOrEmpty(item.Image) ? "~/images/products/" + item.Image : "~/images/a.png";
-            }
+    var item = Model[i];
 
-            <img src="@Url.Content(setImage)" class="card-img-top" alt="...">
+    <div class="card col-3 mb-4">
+        @{
+            string setImage = !String.IsNullOrEmpty(item.Image) ? "~/images/products/" + item.Image : "~/images/a.png";
+        }
 
-            <div class="card-body">
+        <img src="@Url.Content(setImage)" class="card-img-top" alt="...">
 
-                <h5 class="card-title">@item.Title</h5>
-                <p class="card-text">@item.Description</p>
+        <div class="card-body">
 
-                <p class="card-text">@item.Price.ToString("C2")</p>
+            <h5 class="card-title">@item.Title</h5>
+            <p class="card-text">@item.Description</p>
 
-                <a class="btn btn-primary">Check dalmART</a>
-            </div>
-            
+            <p class="card-text">@item.Price.ToString("C2")</p>
+
+                <a href="@Url.Action("ProductDetails", "Home", new { id = item.Id })" class="btn btn-primary">Check dalmART</a>            
         </div>
+
+    </div>
+
+    @if (i == 9) { break; }
+
     }
 </div>
