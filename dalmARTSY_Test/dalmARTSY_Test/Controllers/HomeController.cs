@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 using Microsoft.AspNetCore.Identity;
 using dalmARTSY_Test.Areas.Identity.Data;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace dalmARTSY_Test.Controllers
 {
@@ -19,7 +20,7 @@ namespace dalmARTSY_Test.Controllers
             _appDbContext = appDbContext;
         }
 
-        public IActionResult Index(string? searchQuery, int? orderBy)
+        public IActionResult Index(string? searchQuery, int? orderBy, int? categoryId)
         {
             List<Product> products = _appDbContext.Products.ToList();
             Random randomOrder = new Random();
@@ -30,6 +31,9 @@ namespace dalmARTSY_Test.Controllers
                 products = products.Where(p=>p.Title.ToLower().Contains(searchQuery.ToLower())).ToList();
             }
 
+
+
+
             switch (orderBy)
             {
                 case 1: products = products.OrderBy(p => p.Title).ToList(); break;
@@ -39,9 +43,8 @@ namespace dalmARTSY_Test.Controllers
                 default:break;       
             }
 
-            List<Product> tenProducts = products.Take(10).ToList();
 
-            return View(products);
+            return View(products.Take(10).ToList());
         }
 
         public IActionResult Privacy()

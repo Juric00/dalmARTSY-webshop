@@ -1,0 +1,19 @@
+﻿@using dalmARTSY_Test.Areas.Identity.Data
+@using dalmARTSY_Test.Data
+
+@inject AppDbContext appDbContext
+
+    <div class="dropdown">
+        <a class="btn nav-link dropdown-toggle" id="stylesDropdown" data-bs-toggle="dropdown">
+            dalmARTSY Styles...
+        </a>
+        <ul class="dropdown-menu">
+            <li>
+            @foreach (var style in appDbContext.Styles.ToList())
+                    {
+                        <a class="dropdown-item" href="@Url.Action("ProductsByStyles", "Home", new { style = style.Title })">@style.Title</a>
+                    }
+
+            </li>
+        </ul>
+    </div>
