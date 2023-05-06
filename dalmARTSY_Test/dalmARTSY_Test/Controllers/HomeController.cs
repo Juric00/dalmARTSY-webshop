@@ -47,6 +47,10 @@ namespace dalmARTSY_Test.Controllers
             return View(products.Take(10).ToList());
         }
 
+
+
+
+
         public IActionResult Privacy()
         {
             return View();

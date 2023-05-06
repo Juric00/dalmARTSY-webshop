@@ -31,9 +31,22 @@ namespace dalmARTSY_Test.Areas.Admin.Controllers
         }
 
         // GET: AppUserController/Details/5
-        public ActionResult Details(int id)
+        public async Task<IActionResult> Details(string id)
         {
-            return View();
+            if(string.IsNullOrEmpty(id))
+            {
+               return RedirectToAction(nameof(Index));
+
+            }
+
+            var user = await _userManager.FindByIdAsync(id);
+            if (user == null)
+            {
+                return RedirectToAction(nameof(Index));
+
+            }
+
+            return View(user);
         }
 
         // GET: AppUserController/Create

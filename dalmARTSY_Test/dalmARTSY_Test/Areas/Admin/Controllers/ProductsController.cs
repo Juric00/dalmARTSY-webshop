@@ -133,6 +133,7 @@ namespace dalmARTSY_Test.Areas.Admin.Controllers
                 return NotFound();
             }
             ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Title", product.CategoryId);
+
             return View(product);
         }
 
@@ -141,7 +142,7 @@ namespace dalmARTSY_Test.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,CategoryId,Author,Title,Height,Width,Description,Frame,InStock,Price,ArtCode,Image")] Product product)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,CategoryId,Author,Title,Height,Width,Description,Frame,InStock,Price,ArtCode,Image")] Product product, IFormFile? newImage, int[] styleIds)
         {
             if (id != product.Id)
             {
