@@ -101,7 +101,7 @@ namespace dalmARTSY_Test.Migrations
                         {
                             Id = "edb27c1d-d9de-4ae7-8206-fec010a5004b",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "6f7cf42a-b44b-494b-8e58-058c3a3e9766",
+                            ConcurrencyStamp = "9a61c454-c10e-4664-8f84-951de87d5149",
                             Email = "artsupport@mail.com",
                             EmailConfirmed = false,
                             FirstName = "John",
@@ -109,9 +109,9 @@ namespace dalmARTSY_Test.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ARTSUPPORT@MAIL.COM",
                             NormalizedUserName = "DALMART_IT",
-                            PasswordHash = "AQAAAAEAACcQAAAAEAlXWxjKTM/qFPzCXp0/cn0SFXcwzR/b8dsmn9H0urrFJW7IB867wyX+ZFBR8tZJOQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEOpzo0I8rpqtUC/CmmOVZJY891rliM0DdCGZkWg9pPZCHIwexcfm3v/zz/Z+EzK90g==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "788a8c53-093f-45f5-9cf4-d109a52f6d28",
+                            SecurityStamp = "0981ae09-5dee-48b8-bc06-2ca08af38a31",
                             TwoFactorEnabled = false,
                             UserName = "dalmART_IT"
                         });
@@ -310,11 +310,11 @@ namespace dalmARTSY_Test.Migrations
                             Description = "Description ... update needed ",
                             Frame = false,
                             Height = 50m,
-                            Image = "the_one_with_blue_angel.jpg",
+                            Image = "the_angel.jpeg",
                             InStock = 2,
                             Price = 80.99m,
-                            Title = "The One with Blue Angel",
-                            Width = 60m
+                            Title = "The One with Angel",
+                            Width = 80m
                         },
                         new
                         {
@@ -323,156 +323,431 @@ namespace dalmARTSY_Test.Migrations
                             Author = "Lukrecija Juric",
                             CategoryId = 1,
                             Description = "Description ...update needed",
-                            Frame = true,
-                            Height = 80m,
-                            Image = "the_one_that_shines.jpg",
+                            Frame = false,
+                            Height = 120m,
+                            Image = "shining_one.jpeg",
                             InStock = 1,
                             Price = 120.50m,
                             Title = "The One that Shines",
-                            Width = 80m
-                        },
-                        new
-                        {
-                            Id = 3,
-                            ArtCode = "D100",
-                            Author = "Irena Martinic",
-                            CategoryId = 4,
-                            Description = "Description ...update needed",
-                            Frame = false,
-                            Height = 100m,
-                            Image = "sunset_in_vala.jpg",
-                            InStock = 1,
-                            Price = 50.99m,
-                            Title = "Sunset in Vala",
-                            Width = 120m
-                        },
-                        new
-                        {
-                            Id = 4,
-                            ArtCode = "MM100",
-                            Author = "Keti Zuvic",
-                            CategoryId = 5,
-                            Description = "Description ...update needed",
-                            Frame = true,
-                            Height = 40m,
-                            Image = "portrait_of_a_woman.jpg",
-                            InStock = 5,
-                            Price = 160.00m,
-                            Title = "Portrait of a woman",
                             Width = 40m
                         },
                         new
                         {
-                            Id = 5,
-                            ArtCode = "PH100",
-                            Author = "Pero Dragicevic",
-                            CategoryId = 2,
-                            Description = "Description ...",
-                            Frame = false,
-                            Height = 30m,
-                            Image = "our_people.jpg",
-                            InStock = 7,
-                            Price = 24.99m,
-                            Title = "Our People",
-                            Width = 20m
-                        },
-                        new
-                        {
-                            Id = 6,
+                            Id = 3,
                             ArtCode = "PA102",
-                            Author = "Branka Kusanovic",
+                            Author = "Lukrecija Juric",
                             CategoryId = 1,
                             Description = "Description ...update needed",
-                            Frame = true,
-                            Height = 100m,
-                            Image = "just_an_object.jpg",
-                            InStock = 3,
-                            Price = 70.00m,
-                            Title = "Just an Object",
-                            Width = 140m
+                            Frame = false,
+                            Height = 50m,
+                            Image = "the_olive.jpeg",
+                            InStock = 1,
+                            Price = 50.99m,
+                            Title = "The Olives",
+                            Width = 60m
                         },
                         new
                         {
-                            Id = 7,
+                            Id = 4,
                             ArtCode = "PA103",
                             Author = "Lukrecija Juric",
                             CategoryId = 1,
                             Description = "Description ...update needed",
                             Frame = true,
-                            Height = 100m,
-                            InStock = 2,
-                            Price = 50.9m,
-                            Title = "She with hers",
-                            Width = 40m
+                            Height = 40m,
+                            Image = "bubble.jpeg",
+                            InStock = 5,
+                            Price = 160.00m,
+                            Title = "The Bubble",
+                            Width = 65m
                         },
                         new
                         {
-                            Id = 8,
+                            Id = 5,
                             ArtCode = "PA104",
                             Author = "Lukrecija Juric",
                             CategoryId = 1,
-                            Description = "Description ...update needed",
+                            Description = "Description ...",
                             Frame = true,
-                            Height = 50m,
-                            InStock = 2,
-                            Price = 89.00m,
-                            Title = "Nature as it is",
-                            Width = 100m
+                            Height = 120m,
+                            Image = "the_silly_one.jpeg",
+                            InStock = 7,
+                            Price = 120.99m,
+                            Title = "The Silly PopArt",
+                            Width = 50m
                         },
                         new
                         {
-                            Id = 9,
+                            Id = 6,
                             ArtCode = "PA105",
                             Author = "Lukrecija Juric",
                             CategoryId = 1,
                             Description = "Description ...update needed",
-                            Frame = true,
-                            Height = 40m,
-                            InStock = 1,
-                            Price = 75.00m,
-                            Title = "Somehow",
-                            Width = 60m
+                            Frame = false,
+                            Height = 120m,
+                            Image = "the_two.jpeg",
+                            InStock = 3,
+                            Price = 70.00m,
+                            Title = "The One with Two",
+                            Width = 50m
                         },
                         new
                         {
-                            Id = 10,
-                            ArtCode = "D101",
-                            Author = "Lukrecija Juric",
-                            CategoryId = 4,
-                            Description = "Description ...update needed",
-                            Frame = true,
-                            Height = 60m,
-                            InStock = 5,
-                            Price = 79.00m,
-                            Title = "Artsy",
-                            Width = 80m
-                        },
-                        new
-                        {
-                            Id = 11,
+                            Id = 7,
                             ArtCode = "PA106",
                             Author = "Lukrecija Juric",
                             CategoryId = 1,
                             Description = "Description ...update needed",
                             Frame = true,
-                            Height = 100m,
+                            Height = 70m,
+                            Image = "the_afternoon.jpeg",
+                            InStock = 2,
+                            Price = 100m,
+                            Title = "The Afternoon",
+                            Width = 40m
+                        },
+                        new
+                        {
+                            Id = 8,
+                            ArtCode = "PA107",
+                            Author = "Lukrecija Juric",
+                            CategoryId = 1,
+                            Description = "Description ...update needed",
+                            Frame = true,
+                            Height = 120m,
+                            Image = "dots.jpeg",
+                            InStock = 2,
+                            Price = 89.00m,
+                            Title = "The Dots",
+                            Width = 70m
+                        },
+                        new
+                        {
+                            Id = 9,
+                            ArtCode = "PA108",
+                            Author = "Lukrecija Juric",
+                            CategoryId = 1,
+                            Description = "Description ...update needed",
+                            Frame = false,
+                            Height = 40m,
+                            Image = "summer.jpeg",
+                            InStock = 1,
+                            Price = 75.00m,
+                            Title = "Summers",
+                            Width = 60m
+                        },
+                        new
+                        {
+                            Id = 10,
+                            ArtCode = "PA109",
+                            Author = "Lukrecija Juric",
+                            CategoryId = 1,
+                            Description = "Description ...update needed",
+                            Frame = false,
+                            Height = 60m,
+                            Image = "heart.jpeg",
+                            InStock = 5,
+                            Price = 79.00m,
+                            Title = "Heartsy",
+                            Width = 80m
+                        },
+                        new
+                        {
+                            Id = 11,
+                            ArtCode = "PA110",
+                            Author = "Lukrecija Juric",
+                            CategoryId = 1,
+                            Description = "Description ...update needed",
+                            Frame = true,
+                            Height = 50m,
+                            Image = "dalsea.jpeg",
                             InStock = 1,
                             Price = 90.99m,
-                            Title = "Antidote",
-                            Width = 140m
+                            Title = "Dalsea and beach",
+                            Width = 35m
                         },
                         new
                         {
                             Id = 12,
-                            ArtCode = "D102",
+                            ArtCode = "PA111",
                             Author = "Lukrecija Juric",
-                            CategoryId = 4,
+                            CategoryId = 1,
+                            Description = "Description ...update needed",
+                            Frame = false,
+                            Height = 120m,
+                            Image = "casual.jpeg",
+                            InStock = 3,
+                            Price = 70.00m,
+                            Title = "Casual Pop",
+                            Width = 70m
+                        },
+                        new
+                        {
+                            Id = 13,
+                            ArtCode = "PA112",
+                            Author = "Lukrecija Juric",
+                            CategoryId = 1,
+                            Description = "Description ...update needed",
+                            Frame = false,
+                            Height = 120m,
+                            Image = "darkfall.jpeg",
+                            InStock = 3,
+                            Price = 70.00m,
+                            Title = "Dark Fall",
+                            Width = 30m
+                        },
+                        new
+                        {
+                            Id = 14,
+                            ArtCode = "PA113",
+                            Author = "Lukrecija Juric",
+                            CategoryId = 1,
+                            Description = "Description ...update needed",
+                            Frame = false,
+                            Height = 40m,
+                            Image = "wings.jpeg",
+                            InStock = 3,
+                            Price = 70.00m,
+                            Title = "Wingsy",
+                            Width = 70m
+                        },
+                        new
+                        {
+                            Id = 15,
+                            ArtCode = "PA114",
+                            Author = "Lukrecija Juric",
+                            CategoryId = 1,
                             Description = "Description ...update needed",
                             Frame = false,
                             Height = 20m,
                             InStock = 3,
                             Price = 70.00m,
                             Title = "Objects",
+                            Width = 40m
+                        },
+                        new
+                        {
+                            Id = 16,
+                            ArtCode = "PA115",
+                            Author = "Lukrecija Juric",
+                            CategoryId = 1,
+                            Description = "Description ...update needed",
+                            Frame = false,
+                            Height = 20m,
+                            Image = "lovefall.jpeg",
+                            InStock = 3,
+                            Price = 70.00m,
+                            Title = "Fall-in in Love",
+                            Width = 40m
+                        },
+                        new
+                        {
+                            Id = 17,
+                            ArtCode = "PH100",
+                            Author = "Rhamely Wyunko",
+                            CategoryId = 2,
+                            Description = "Description ... update needed ",
+                            Frame = false,
+                            Height = 50m,
+                            Image = "books.jpeg",
+                            InStock = 2,
+                            Price = 80.99m,
+                            Title = "The One with Books",
+                            Width = 60m
+                        },
+                        new
+                        {
+                            Id = 18,
+                            ArtCode = "PH101",
+                            Author = "Dimitro Franz",
+                            CategoryId = 2,
+                            Description = "Description ...update needed",
+                            Frame = true,
+                            Height = 80m,
+                            Image = "house.jpeg",
+                            InStock = 1,
+                            Price = 120.50m,
+                            Title = "The One with House",
+                            Width = 80m
+                        },
+                        new
+                        {
+                            Id = 19,
+                            ArtCode = "PH102",
+                            Author = "Daniel Torbekov",
+                            CategoryId = 2,
+                            Description = "Description ...update needed",
+                            Frame = false,
+                            Height = 100m,
+                            Image = "deep.jpeg",
+                            InStock = 1,
+                            Price = 50.99m,
+                            Title = "Deep Dive",
+                            Width = 120m
+                        },
+                        new
+                        {
+                            Id = 20,
+                            ArtCode = "PH103",
+                            Author = "Chris Cermak",
+                            CategoryId = 2,
+                            Description = "Description ...update needed",
+                            Frame = true,
+                            Height = 40m,
+                            Image = "mountain.jpeg",
+                            InStock = 5,
+                            Price = 160.00m,
+                            Title = "The Mountain",
+                            Width = 40m
+                        },
+                        new
+                        {
+                            Id = 21,
+                            ArtCode = "PH104",
+                            Author = "Quang Ngueyn",
+                            CategoryId = 2,
+                            Description = "Description ...",
+                            Frame = false,
+                            Height = 30m,
+                            Image = "stones.jpeg",
+                            InStock = 7,
+                            Price = 24.99m,
+                            Title = "The Stones",
+                            Width = 20m
+                        },
+                        new
+                        {
+                            Id = 22,
+                            ArtCode = "DA100",
+                            Author = "Rotislav Uzunov",
+                            CategoryId = 3,
+                            Description = "Description ...update needed",
+                            Frame = true,
+                            Height = 100m,
+                            Image = "square.jpeg",
+                            InStock = 3,
+                            Price = 70.00m,
+                            Title = "The Square",
+                            Width = 140m
+                        },
+                        new
+                        {
+                            Id = 23,
+                            ArtCode = "DA101",
+                            Author = "Mo Eid",
+                            CategoryId = 3,
+                            Description = "Description ...update needed",
+                            Frame = true,
+                            Height = 100m,
+                            Image = "tree.jpeg",
+                            InStock = 2,
+                            Price = 50.9m,
+                            Title = "The Tree",
+                            Width = 40m
+                        },
+                        new
+                        {
+                            Id = 24,
+                            ArtCode = "DA102",
+                            Author = "Rodion Kutsayev",
+                            CategoryId = 3,
+                            Description = "Description ...update needed",
+                            Frame = true,
+                            Height = 50m,
+                            Image = "doors.jpeg",
+                            InStock = 2,
+                            Price = 89.00m,
+                            Title = "The Doors",
+                            Width = 100m
+                        },
+                        new
+                        {
+                            Id = 25,
+                            ArtCode = "DR100",
+                            Author = "Tayla Walls",
+                            CategoryId = 4,
+                            Description = "Description ...update needed",
+                            Frame = true,
+                            Height = 40m,
+                            Image = "eye.jpeg",
+                            InStock = 1,
+                            Price = 75.00m,
+                            Title = "The Eye",
+                            Width = 60m
+                        },
+                        new
+                        {
+                            Id = 26,
+                            ArtCode = "DR101",
+                            Author = "David Guerrero",
+                            CategoryId = 4,
+                            Description = "Description ...update needed",
+                            Frame = true,
+                            Height = 60m,
+                            Image = "face.jpeg",
+                            InStock = 5,
+                            Price = 79.00m,
+                            Title = "The Face",
+                            Width = 80m
+                        },
+                        new
+                        {
+                            Id = 27,
+                            ArtCode = "MM100",
+                            Author = "Steve Johnson",
+                            CategoryId = 5,
+                            Description = "Description ...update needed",
+                            Frame = true,
+                            Height = 100m,
+                            Image = "mixy.jpeg",
+                            InStock = 1,
+                            Price = 90.99m,
+                            Title = "The Mixy",
+                            Width = 140m
+                        },
+                        new
+                        {
+                            Id = 28,
+                            ArtCode = "MM101",
+                            Author = "Velroy Fernandes",
+                            CategoryId = 5,
+                            Description = "Description ...update needed",
+                            Frame = false,
+                            Height = 20m,
+                            Image = "divinginto",
+                            InStock = 3,
+                            Price = 70.00m,
+                            Title = "Diving Into",
+                            Width = 40m
+                        },
+                        new
+                        {
+                            Id = 29,
+                            ArtCode = "MM102",
+                            Author = "Steve Johnson",
+                            CategoryId = 5,
+                            Description = "Description ...update needed",
+                            Frame = false,
+                            Height = 20m,
+                            Image = "reddot",
+                            InStock = 3,
+                            Price = 70.00m,
+                            Title = "The red Dot",
+                            Width = 40m
+                        },
+                        new
+                        {
+                            Id = 30,
+                            ArtCode = "MM103",
+                            Author = "Zakuskek Ayar",
+                            CategoryId = 5,
+                            Description = "Description ...update needed",
+                            Frame = false,
+                            Height = 20m,
+                            Image = "zeta",
+                            InStock = 3,
+                            Price = 70.00m,
+                            Title = "Zeta Blue",
                             Width = 40m
                         });
                 });
@@ -498,6 +773,284 @@ namespace dalmARTSY_Test.Migrations
                     b.HasIndex("StyleId");
 
                     b.ToTable("ProductStyles");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            ProductId = 1,
+                            StyleId = 5
+                        },
+                        new
+                        {
+                            Id = 2,
+                            ProductId = 2,
+                            StyleId = 5
+                        },
+                        new
+                        {
+                            Id = 3,
+                            ProductId = 3,
+                            StyleId = 5
+                        },
+                        new
+                        {
+                            Id = 4,
+                            ProductId = 4,
+                            StyleId = 1
+                        },
+                        new
+                        {
+                            Id = 5,
+                            ProductId = 5,
+                            StyleId = 2
+                        },
+                        new
+                        {
+                            Id = 6,
+                            ProductId = 5,
+                            StyleId = 3
+                        },
+                        new
+                        {
+                            Id = 7,
+                            ProductId = 6,
+                            StyleId = 3
+                        },
+                        new
+                        {
+                            Id = 8,
+                            ProductId = 7,
+                            StyleId = 3
+                        },
+                        new
+                        {
+                            Id = 9,
+                            ProductId = 7,
+                            StyleId = 5
+                        },
+                        new
+                        {
+                            Id = 10,
+                            ProductId = 8,
+                            StyleId = 3
+                        },
+                        new
+                        {
+                            Id = 11,
+                            ProductId = 8,
+                            StyleId = 5
+                        },
+                        new
+                        {
+                            Id = 12,
+                            ProductId = 9,
+                            StyleId = 5
+                        },
+                        new
+                        {
+                            Id = 13,
+                            ProductId = 10,
+                            StyleId = 3
+                        },
+                        new
+                        {
+                            Id = 14,
+                            ProductId = 10,
+                            StyleId = 2
+                        },
+                        new
+                        {
+                            Id = 15,
+                            ProductId = 11,
+                            StyleId = 5
+                        },
+                        new
+                        {
+                            Id = 16,
+                            ProductId = 12,
+                            StyleId = 3
+                        },
+                        new
+                        {
+                            Id = 17,
+                            ProductId = 13,
+                            StyleId = 5
+                        },
+                        new
+                        {
+                            Id = 18,
+                            ProductId = 13,
+                            StyleId = 1
+                        },
+                        new
+                        {
+                            Id = 19,
+                            ProductId = 14,
+                            StyleId = 5
+                        },
+                        new
+                        {
+                            Id = 20,
+                            ProductId = 14,
+                            StyleId = 1
+                        },
+                        new
+                        {
+                            Id = 21,
+                            ProductId = 15,
+                            StyleId = 1
+                        },
+                        new
+                        {
+                            Id = 22,
+                            ProductId = 16,
+                            StyleId = 5
+                        },
+                        new
+                        {
+                            Id = 23,
+                            ProductId = 16,
+                            StyleId = 2
+                        },
+                        new
+                        {
+                            Id = 24,
+                            ProductId = 17,
+                            StyleId = 5
+                        },
+                        new
+                        {
+                            Id = 25,
+                            ProductId = 18,
+                            StyleId = 5
+                        },
+                        new
+                        {
+                            Id = 26,
+                            ProductId = 19,
+                            StyleId = 1
+                        },
+                        new
+                        {
+                            Id = 27,
+                            ProductId = 19,
+                            StyleId = 2
+                        },
+                        new
+                        {
+                            Id = 28,
+                            ProductId = 20,
+                            StyleId = 5
+                        },
+                        new
+                        {
+                            Id = 29,
+                            ProductId = 21,
+                            StyleId = 5
+                        },
+                        new
+                        {
+                            Id = 30,
+                            ProductId = 22,
+                            StyleId = 5
+                        },
+                        new
+                        {
+                            Id = 31,
+                            ProductId = 22,
+                            StyleId = 1
+                        },
+                        new
+                        {
+                            Id = 32,
+                            ProductId = 23,
+                            StyleId = 5
+                        },
+                        new
+                        {
+                            Id = 33,
+                            ProductId = 24,
+                            StyleId = 1
+                        },
+                        new
+                        {
+                            Id = 34,
+                            ProductId = 24,
+                            StyleId = 5
+                        },
+                        new
+                        {
+                            Id = 35,
+                            ProductId = 25,
+                            StyleId = 1
+                        },
+                        new
+                        {
+                            Id = 36,
+                            ProductId = 25,
+                            StyleId = 2
+                        },
+                        new
+                        {
+                            Id = 37,
+                            ProductId = 26,
+                            StyleId = 1
+                        },
+                        new
+                        {
+                            Id = 38,
+                            ProductId = 26,
+                            StyleId = 5
+                        },
+                        new
+                        {
+                            Id = 39,
+                            ProductId = 27,
+                            StyleId = 4
+                        },
+                        new
+                        {
+                            Id = 40,
+                            ProductId = 27,
+                            StyleId = 1
+                        },
+                        new
+                        {
+                            Id = 41,
+                            ProductId = 27,
+                            StyleId = 2
+                        },
+                        new
+                        {
+                            Id = 42,
+                            ProductId = 28,
+                            StyleId = 1
+                        },
+                        new
+                        {
+                            Id = 43,
+                            ProductId = 28,
+                            StyleId = 5
+                        },
+                        new
+                        {
+                            Id = 44,
+                            ProductId = 29,
+                            StyleId = 1
+                        },
+                        new
+                        {
+                            Id = 45,
+                            ProductId = 29,
+                            StyleId = 2
+                        },
+                        new
+                        {
+                            Id = 46,
+                            ProductId = 30,
+                            StyleId = 2
+                        });
                 });
 
             modelBuilder.Entity("dalmARTSY_Test.Models.Style", b =>
@@ -585,7 +1138,7 @@ namespace dalmARTSY_Test.Migrations
                         new
                         {
                             Id = "9ce0f798-67a5-4957-adae-c1e2bb402f74",
-                            ConcurrencyStamp = "217e9008-5ee8-4be7-b6fc-4d30b1d45b69",
+                            ConcurrencyStamp = "c8c0b890-8fb2-4beb-b7d7-b81335c59256",
                             Name = "dalmARTmin",
                             NormalizedName = "DALMARTMIN"
                         });
