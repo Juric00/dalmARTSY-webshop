@@ -4,14 +4,16 @@
 @inject AppDbContext appDbContext
 
     <div class="dropdown">
-        <a class="btn nav-link dropdown-toggle" id="stylesDropdown" data-bs-toggle="dropdown">
-            dalmARTSY Styles...
+        <a class="btn nav-link dropdown-toggle" id="categoriesDropdown" name="id" data-bs-toggle="dropdown">
+            dalmARTSY Categories...
         </a>
         <ul class="dropdown-menu">
             <li>
-            @foreach (var style in appDbContext.Styles.ToList())
+            @foreach (var categories in appDbContext.Categories.ToList())
                     {
-                        <a class="dropdown-item" href="@Url.Action("ProductsByStyles", "Home", new { style = style.Title })">@style.Title</a>
+                        <a class="dropdown-item" type="button" asp-action="ProductsByCategories" asp-route-id="@categories.Id">
+                            @categories.Title
+                        </a>
                     }
 
             </li>

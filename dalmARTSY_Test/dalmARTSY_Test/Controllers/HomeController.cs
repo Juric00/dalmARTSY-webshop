@@ -6,6 +6,8 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Identity;
 using dalmARTSY_Test.Areas.Identity.Data;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Linq;
+using System.Collections.Immutable;
 
 namespace dalmARTSY_Test.Controllers
 {
@@ -46,6 +48,25 @@ namespace dalmARTSY_Test.Controllers
 
             return View(products.Take(10).ToList());
         }
+
+        public IActionResult ProductsByCategories(int id)
+        {
+            if (id <= 0)
+            {
+                return NotFound();
+            }
+
+            List<Product> productsByCategories = _appDbContext.Products.Where(p=> p.CategoryId == id).ToList();
+
+            if (productsByCategories == null)
+            {
+                return NotFound();
+            }
+
+            return View(productsByCategories);
+        }
+
+
 
 
 

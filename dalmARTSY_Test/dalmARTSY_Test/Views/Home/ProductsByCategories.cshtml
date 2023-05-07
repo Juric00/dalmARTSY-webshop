@@ -1,0 +1,33 @@
+﻿
+@model List<Product> 
+
+@using dalmARTSY_Test.Models
+
+<h1>Products By Categories</h1>
+
+
+        <div class="row">
+
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        @{
+                            string setImage = !String.IsNullOrEmpty(item.Image) ? "~/images/products/" + item.Image : "~/images/a.png";
+                        }
+                        <img src="@Url.Content(setImage)" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">@item.Title</h5>
+                            <p class="card-text">@item.Description</p>
+                            <p class="card-text">@item.Price.ToString("C2")</p>
+                            <a href="@Url.Action("ProductDetails", "Home", new { id = item.Id })" class="btn btn-primary">Check dalmART</a>            
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+
+
+
+
