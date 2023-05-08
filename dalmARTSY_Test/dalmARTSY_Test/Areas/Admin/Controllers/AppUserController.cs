@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Mvc;
 
 namespace dalmARTSY_Test.Areas.Admin.Controllers
 {
@@ -182,27 +183,64 @@ namespace dalmARTSY_Test.Areas.Admin.Controllers
             return View(user);
              
             }
+
+
+
+        // GET: AppUserController/Delete/5
+        [HttpGet]
+        public async Task<IActionResult> Delete(string id)
+        {
+            if (string.IsNullOrEmpty(id))
+            {
+                return RedirectToAction(nameof(Index));
+            }
+
+            var user = await _userManager.FindByIdAsync(id);
+            if (user == null)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+    
+            return View(user);
         }
 
-    // GET: AppUserController/Delete/5
-    //public ActionResult Delete(int id)
-    //{
-    //    return View();
-    //}
+        // POST: AppUserController/Delete/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteUser(string id)
+        {
+            if (string.IsNullOrEmpty(id))
+            {
+                return RedirectToAction(nameof(Index));
+            }
 
-    //// POST: AppUserController/Delete/5
-    //[HttpPost]
-    //[ValidateAntiForgeryToken]
-    //public ActionResult Delete(int id, IFormCollection collection)
-    //{
-    //    try
-    //    {
-    //        return RedirectToAction(nameof(Index));
-    //    }
-    //    catch
-    //    {
-    //        return View();
-    //    }
-    //}
+            var user = await _userManager.FindByIdAsync(id);
+            if (user == null)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            
+            var result = await _userManager.DeleteAsync(user);
+
+            if(result.Succeeded)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            else
+            {
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError("", error.Description);
+                }
+            }
+
+            return View(nameof(Index));
+
+        }
+
+
+    }
+
+ 
 }
 
