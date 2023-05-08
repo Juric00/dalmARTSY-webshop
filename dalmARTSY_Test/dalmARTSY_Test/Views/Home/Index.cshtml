@@ -1,4 +1,23 @@
-﻿@model List<Product>
+﻿<style>
+    .card {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+
+    .btn-primary {
+        background-color: #87CEEB;
+        border-color: #87CEEB;
+    }
+</style>
+
+
+
+
+
+@model List<Product>
+
+<div class="container my-5" style="background-color: #fffacd;">
 
 
 @{
@@ -66,4 +85,5 @@
     @if (i == 9) { break; }
 
     }
+</div>
 </div>

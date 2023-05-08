@@ -87,15 +87,15 @@ public class AppDbContext : IdentityDbContext<AppUser>
 
 
 
-            new Product() { Id = 17, CategoryId = 2, Author = "Rhamely Wyunko", Title = "The One with Books", Height = 50, Width = 60, Description = "Description ... update needed ", Frame = false, InStock = 2, Price = 80.99M, ArtCode = "PH100", Image = "books.jpeg" },
+            new Product() { Id = 17, CategoryId = 2, Author = "Rhamely Wyunko", Title = "The One with Books", Height = 50, Width = 60, Description = "Description ... update needed ", Frame = false, InStock = 2, Price = 80.99M, ArtCode = "PH100", Image = "books.jpg" },
 
-            new Product() { Id = 18, CategoryId = 2, Author = "Dimitro Franz", Title = "The One with House", Height = 80, Width = 80, Description = "Description ...update needed", Frame = true, InStock = 1, Price = 120.50M, ArtCode = "PH101", Image = "house.jpeg" },
+            new Product() { Id = 18, CategoryId = 2, Author = "Dimitro Franz", Title = "The One with House", Height = 80, Width = 80, Description = "Description ...update needed", Frame = true, InStock = 1, Price = 120.50M, ArtCode = "PH101", Image = "house.jpg" },
 
-            new Product() { Id = 19, CategoryId = 2, Author = "Daniel Torbekov", Title = "Deep Dive", Height = 100, Width = 120, Description = "Description ...update needed", Frame = false, InStock = 1, Price = 50.99M, ArtCode = "PH102", Image = "deep.jpeg"},
+            new Product() { Id = 19, CategoryId = 2, Author = "Daniel Torbekov", Title = "Deep Dive", Height = 100, Width = 120, Description = "Description ...update needed", Frame = false, InStock = 1, Price = 50.99M, ArtCode = "PH102", Image = "deep.jpg"},
 
-            new Product() { Id = 20, CategoryId = 2, Author = "Chris Cermak", Title = "The Mountain", Height = 40, Width = 40, Description = "Description ...update needed", Frame = true, InStock = 5, Price = 160.00M, ArtCode = "PH103", Image = "mountain.jpeg"},
+            new Product() { Id = 20, CategoryId = 2, Author = "Chris Cermak", Title = "The Mountain", Height = 40, Width = 40, Description = "Description ...update needed", Frame = true, InStock = 5, Price = 160.00M, ArtCode = "PH103", Image = "mountain.jpg"},
 
-            new Product() { Id = 21, CategoryId = 2, Author = "Quang Ngueyn", Title = "The Stones", Height = 30, Width = 20, Description = "Description ...", Frame = false, InStock = 7, Price = 24.99M, ArtCode = "PH104", Image = "stones.jpeg"},
+            new Product() { Id = 21, CategoryId = 2, Author = "Quang Ngueyn", Title = "The Stones", Height = 30, Width = 20, Description = "Description ...", Frame = false, InStock = 7, Price = 24.99M, ArtCode = "PH104", Image = "stones.jpg"},
             
             
             
@@ -103,34 +103,34 @@ public class AppDbContext : IdentityDbContext<AppUser>
             
             
             
-            new Product() { Id = 22, CategoryId = 3, Author = "Rotislav Uzunov", Title = "The Square", Height = 100, Width = 140, Description = "Description ...update needed", Frame = true, InStock = 3, Price = 70.00M, ArtCode = "DA100", Image = "square.jpeg"},
+            new Product() { Id = 22, CategoryId = 3, Author = "Rotislav Uzunov", Title = "The Square", Height = 100, Width = 140, Description = "Description ...update needed", Frame = true, InStock = 3, Price = 70.00M, ArtCode = "DA100", Image = "square.jpg"},
 
-            new Product() { Id = 23, CategoryId = 3, Author = "Mo Eid", Title = "The Tree", Height = 100, Width = 40, Description = "Description ...update needed", Frame = true, InStock = 2, Price = 50.9M, ArtCode = "DA101",Image = "tree.jpeg"},
+            new Product() { Id = 23, CategoryId = 3, Author = "Mo Eid", Title = "The Tree", Height = 100, Width = 40, Description = "Description ...update needed", Frame = true, InStock = 2, Price = 50.9M, ArtCode = "DA101",Image = "tree.jpg"},
 
-            new Product() { Id = 24, CategoryId = 3, Author = "Rodion Kutsayev", Title = "The Doors", Height = 50, Width = 100, Description = "Description ...update needed", Frame = true, InStock = 2, Price = 89.00M, ArtCode = "DA102",Image = "doors.jpeg"},
-
-
-
-
-
-
-            new Product() { Id = 25, CategoryId = 4, Author = "Tayla Walls", Title = "The Eye", Height = 40, Width = 60, Description = "Description ...update needed", Frame = true, InStock = 1, Price = 75.00M, ArtCode = "DR100", Image="eye.jpeg"},
-
-            new Product() { Id = 26, CategoryId = 4, Author = "David Guerrero", Title = "The Face", Height = 60, Width = 80, Description = "Description ...update needed", Frame = true, InStock = 5, Price = 79.00M, ArtCode = "DR101", Image="face.jpeg"},
+            new Product() { Id = 24, CategoryId = 3, Author = "Rodion Kutsayev", Title = "The Doors", Height = 50, Width = 100, Description = "Description ...update needed", Frame = true, InStock = 2, Price = 89.00M, ArtCode = "DA102",Image = "doors.jpg"},
 
 
 
 
 
 
+            new Product() { Id = 25, CategoryId = 4, Author = "Tayla Walls", Title = "The Eye", Height = 40, Width = 60, Description = "Description ...update needed", Frame = true, InStock = 1, Price = 75.00M, ArtCode = "DR100", Image="eye.jpg"},
 
-            new Product() { Id = 27, CategoryId = 5, Author = "Steve Johnson", Title = "The Mixy", Height = 100, Width = 140, Description = "Description ...update needed", Frame = true, InStock = 1, Price = 90.99M, ArtCode = "MM100", Image="mixy.jpeg"},
+            new Product() { Id = 26, CategoryId = 4, Author = "David Guerrero", Title = "The Face", Height = 60, Width = 80, Description = "Description ...update needed", Frame = true, InStock = 5, Price = 79.00M, ArtCode = "DR101", Image="face.jpg"},
 
-            new Product() { Id = 28, CategoryId = 5, Author = "Velroy Fernandes", Title = "Diving Into", Height = 20, Width = 40, Description = "Description ...update needed", Frame = false, InStock = 3, Price = 70.00M, ArtCode = "MM101", Image="divinginto"},
 
-            new Product() { Id = 29, CategoryId = 5, Author = "Steve Johnson", Title = "The red Dot", Height = 20, Width = 40, Description = "Description ...update needed", Frame = false, InStock = 3, Price = 70.00M, ArtCode = "MM102", Image = "reddot"},
 
-            new Product() { Id = 30, CategoryId = 5, Author = "Zakuskek Ayar", Title = "Zeta Blue", Height = 20, Width = 40, Description = "Description ...update needed", Frame = false, InStock = 3, Price = 70.00M, ArtCode = "MM103", Image = "zeta"}
+
+
+
+
+            new Product() { Id = 27, CategoryId = 5, Author = "Steve Johnson", Title = "The Mixy", Height = 100, Width = 140, Description = "Description ...update needed", Frame = true, InStock = 1, Price = 90.99M, ArtCode = "MM100", Image="mixy.jpg"},
+
+            new Product() { Id = 28, CategoryId = 5, Author = "Velroy Fernandes", Title = "Diving Into", Height = 20, Width = 40, Description = "Description ...update needed", Frame = false, InStock = 3, Price = 70.00M, ArtCode = "MM101", Image="divinginto.jpg"},
+
+            new Product() { Id = 29, CategoryId = 5, Author = "Steve Johnson", Title = "The red Dot", Height = 20, Width = 40, Description = "Description ...update needed", Frame = false, InStock = 3, Price = 70.00M, ArtCode = "MM102", Image = "reddot.jpg"},
+
+            new Product() { Id = 30, CategoryId = 5, Author = "Zakuskek Ayar", Title = "Zeta Blue", Height = 20, Width = 40, Description = "Description ...update needed", Frame = false, InStock = 3, Price = 70.00M, ArtCode = "MM103", Image = "zeta.jpg"}
 
         };
 
