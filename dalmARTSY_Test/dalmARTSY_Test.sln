@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33403.182
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dalmARTSY_Test", "dalmARTSY_Test\dalmARTSY_Test.csproj", "{E5C5F20A-FDE9-4B6B-8609-FCB6B482CA23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dalmARTSY_Test", "dalmARTSY_Test\dalmARTSY_Test.csproj", "{E5C5F20A-FDE9-4B6B-8609-FCB6B482CA23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dalmARTSYapi", "dalmARTSYapi\dalmARTSYapi.csproj", "{10E12181-2024-4200-BCD2-F22FF38FA76D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{E5C5F20A-FDE9-4B6B-8609-FCB6B482CA23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5C5F20A-FDE9-4B6B-8609-FCB6B482CA23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5C5F20A-FDE9-4B6B-8609-FCB6B482CA23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10E12181-2024-4200-BCD2-F22FF38FA76D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10E12181-2024-4200-BCD2-F22FF38FA76D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10E12181-2024-4200-BCD2-F22FF38FA76D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10E12181-2024-4200-BCD2-F22FF38FA76D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

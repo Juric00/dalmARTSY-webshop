@@ -23,6 +23,7 @@ namespace dalmARTSY_Test.Areas.Admin.Controllers
         }
 
         // GET: AppUserController
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
             var users = await _userManager.Users.ToListAsync();
@@ -31,6 +32,7 @@ namespace dalmARTSY_Test.Areas.Admin.Controllers
         }
 
         // GET: AppUserController/Details/5
+        [HttpGet]
         public async Task<IActionResult> Details(string id)
         {
             if(string.IsNullOrEmpty(id))
@@ -50,6 +52,7 @@ namespace dalmARTSY_Test.Areas.Admin.Controllers
         }
 
         // GET: AppUserController/Create
+        [HttpGet]
         public ActionResult Create()
         {
             ViewBag.ErrorMessage = TempData["ErrorMessage"] as string ?? string.Empty;
@@ -91,6 +94,7 @@ namespace dalmARTSY_Test.Areas.Admin.Controllers
         }
 
         // GET: AppUserController/Edit/5
+        [HttpGet]
         public async Task <IActionResult> Edit(string id)
         {
             AppUser user = await _userManager.FindByIdAsync(id);
@@ -180,25 +184,25 @@ namespace dalmARTSY_Test.Areas.Admin.Controllers
             }
         }
 
-        //// GET: AppUserController/Delete/5
-        //public ActionResult Delete(int id)
-        //{
-        //    return View();
-        //}
+    // GET: AppUserController/Delete/5
+    //public ActionResult Delete(int id)
+    //{
+    //    return View();
+    //}
 
-        //// POST: AppUserController/Delete/5
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Delete(int id, IFormCollection collection)
-        //{
-        //    try
-        //    {
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
-    }
+    //// POST: AppUserController/Delete/5
+    //[HttpPost]
+    //[ValidateAntiForgeryToken]
+    //public ActionResult Delete(int id, IFormCollection collection)
+    //{
+    //    try
+    //    {
+    //        return RedirectToAction(nameof(Index));
+    //    }
+    //    catch
+    //    {
+    //        return View();
+    //    }
+    //}
+}
 
