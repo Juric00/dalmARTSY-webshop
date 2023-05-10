@@ -153,6 +153,29 @@ namespace dalmARTSY_Test.Areas.Admin.Controllers
             {
                 try
                 {
+                    if(newImage != null)
+                    {
+                        var getFileExtension = Path.GetExtension(newImage.FileName);
+                        var imageName = DateTime.Now.ToString("yyyy-MM-dd-hh-mm-ss") + getFileExtension;
+                        var saveImagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/products", imageName);
+
+                        Directory.CreateDirectory(Path.GetDirectoryName(saveImagePath) ?? throw new ArgumentNullException(nameof(saveImagePath)));
+
+                        using (var stream = new FileStream(saveImagePath, FileMode.Create))
+                        {
+                            newImage.CopyTo(stream);
+                        }
+
+                        // Remove the old image file if necessary
+                        var oldImagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/products", product.Image);
+                        if (System.IO.File.Exists(oldImagePath))
+                        {
+                            System.IO.File.Delete(oldImagePath);
+                        }
+
+                        product.Image = imageName;
+
+                    }
                     _context.Update(product);
                     await _context.SaveChangesAsync();
                 }

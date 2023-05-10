@@ -8,10 +8,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace dalmARTSY_Test.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     [Route("admin/[controller]/[action]")]
     public class AppUserController : Controller
     {
@@ -124,45 +126,27 @@ namespace dalmARTSY_Test.Areas.Admin.Controllers
                 {
                     user.Id = id;
                 }
-                else
-                {
-                    ModelState.AddModelError("", "Please enter your email address");
-                }
+
                 if (!String.IsNullOrEmpty(email))
                 {
                     user.Email = email;
                 }
-                else
-                {
-                    ModelState.AddModelError("", "Please enter your email address");
-                }
+
                 if (!String.IsNullOrEmpty(firstName))
                 {
                     user.FirstName = firstName;
                 }
-                else
-                {
-                    ModelState.AddModelError("", "Please enter your email address");
-                }
+
                 if (!String.IsNullOrEmpty(lastName))
                 {
                     user.LastName = lastName;
                 }
-                else
-                {
-                    ModelState.AddModelError("", "Please enter your email address");
-                }
+
                 if (!String.IsNullOrEmpty(password))
                 {
                     user.PasswordHash = new PasswordHasher<AppUser>().HashPassword(user,password);
                 }
-                else
-                {
-                    ModelState.AddModelError("", "Please enter your email address");
-                }
 
-                if (!String.IsNullOrEmpty(email) && !String.IsNullOrEmpty(password) && !String.IsNullOrEmpty(firstName) && !String.IsNullOrEmpty(lastName))
-                {
                     var result = await _userManager.UpdateAsync(user);
 
                     if (result.Succeeded)
@@ -172,15 +156,16 @@ namespace dalmARTSY_Test.Areas.Admin.Controllers
 
                     else
                     {
-                        foreach (IdentityError error in result.Errors)
+                        foreach (var error in result.Errors)
+                        {
                             ModelState.AddModelError("", error.Description);
+                        }
                     }
                 }
-            }
-            else
-                ModelState.AddModelError("", "No user");
+                else
+                    ModelState.AddModelError("", "No user");
 
-            return View(user);
+                return View(user);
              
             }
 
