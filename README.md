@@ -18,7 +18,7 @@ Prerequisites:
 
 Steps:
 - extract the compressed file to a folder on your local machine
-- open the solution file 'dalmARTSY_Test.sln' in VIisual Studio or Visual Studio Code
+- open the solution file 'dalmARTSY_Test.sln' in Visual Studio or Visual Studio Code
 - in the 'appsettings.Development.json' file, update the 'ConnectionStrings' section to match your local database connection settings
 - open 'Package Manager Console' and run:
       'update-database' - (command in EF that applies migrations to the database)
@@ -28,18 +28,12 @@ NAVIGATING THE APP
 ========================================================================================================================================
 Once the installation is completed, launch the web application after it is builded successfully and start exploring dalmARTSY webshop.
 
-The dalmARTSY webshop has a user-friendly interface that allows customers to browse, search, and purchase original art pieces. The home page 
+The dalmARTSY webshop has a user-friendly interface that allows customers to search original art pieces. The home page 
 displays featured paintings and allows customers to filter paintings by categories. Customers can view the details of each painting by clicking 
 on 'Check dalmART' button. 
 
-dalmART_IT (Admin Authority)
 
-Log In as ADMIN:
-email:
-password: 
 
-This will allow you access to manipulate all products, categories, styles and users. 
-aaaaa
 
 
 
